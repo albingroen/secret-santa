@@ -20,7 +20,9 @@ function App() {
             onSubmit={(name) => setParticipants([...participants, name])}
           />
 
-          <button onClick={() => setStep(1)}>Next step</button>
+          {participants.length > 1 ? (
+            <button onClick={() => setStep(1)}>Next step</button>
+          ) : null}
         </div>
       );
     case 1:
