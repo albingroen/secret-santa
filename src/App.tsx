@@ -39,7 +39,6 @@ function App() {
             Now everyone should have someone to buy a gift to!
           </h1>
           <button
-            style={{ marginTop: "1rem" }}
             onClick={() => {
               setParticipants([]);
               setStep(0);

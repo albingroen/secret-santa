@@ -84,17 +84,24 @@ input {
   padding: 1rem 1.5rem;
 }
 
+.error button {
+  margin-top: 1rem;
+}
+
 input:focus {
   outline: none;
 }
 
 button {
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.15);
+  text-transform: uppercase;
   background: var(--green);
   border-radius: 50px;
+  letter-spacing: 1px;
+  font-size: 0.875em;
+  font-weight: 500;
   cursor: pointer;
   color: white;
-  font-size: 1em;
   padding: 1rem;
   border: none;
   width: 100%;
