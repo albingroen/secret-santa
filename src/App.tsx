@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import AddParticipant from "./components/AddParticipant/AddParticipant";
 import Reveal from "./components/Reveal/Reveal";
@@ -9,12 +10,12 @@ function App() {
   switch (step) {
     case 0:
       return (
-        <div>
-          <ul>
+        <div className="app">
+          <div className="names">
             {participants.map((participant) => (
-              <li key={participant}>{participant}</li>
+              <p key={participant}>{participant}</p>
             ))}
-          </ul>
+          </div>
 
           <AddParticipant
             onSubmit={(name) => setParticipants([...participants, name])}
@@ -27,14 +28,25 @@ function App() {
       );
     case 1:
       return (
-        <div>
+        <div className="app">
           <Reveal onFinish={() => setStep(2)} participants={participants} />
         </div>
       );
     case 2:
       return (
-        <div>
-          <h1>Now everyone should have someone to buy a gift to!</h1>
+        <div className="app">
+          <h1 className="finish">
+            Now everyone should have someone to buy a gift to!
+          </h1>
+          <button
+            style={{ marginTop: "1rem" }}
+            onClick={() => {
+              setParticipants([]);
+              setStep(0);
+            }}
+          >
+            Start over
+          </button>
         </div>
       );
     default:

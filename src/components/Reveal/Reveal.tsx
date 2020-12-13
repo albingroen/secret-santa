@@ -33,12 +33,12 @@ export default function Reveal({ participants, onFinish }: IRevealProps) {
   const nextParticipant = participants[participants.indexOf(participant) + 1];
 
   return (
-    <div>
-      <h1>{participant}</h1>
+    <div className="reveal">
+      <h1>{`${participant}s tur`}</h1>
 
       {participantToBuyTo ? (
         <div>
-          <p>{participantToBuyTo}</p>
+          <p className="buy-too">{`You should buy a gift to ${participantToBuyTo}!`}</p>
 
           {nextParticipant ? (
             <button
@@ -50,11 +50,13 @@ export default function Reveal({ participants, onFinish }: IRevealProps) {
               Next participant
             </button>
           ) : (
-            <button onClick={onFinish}>Finish game</button>
+            <button onClick={onFinish}>
+              Finish game
+            </button>
           )}
         </div>
       ) : (
-        <button onClick={reveal}>Reveal</button>
+        <button onClick={reveal}>Who should I buy for?</button>
       )}
     </div>
   );
